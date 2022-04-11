@@ -20,7 +20,7 @@ def scrape():
     mars=mongo.db.mars
     #holds newly scraped data, referencing scrape_all() function in scraping.py file
     mars_data=Scraping.scrape_all()
-    mars.update_one({},mars_data,upsert=True)
+    mars.update_one({}, {"$set": mars_data}, upsert=True)
     return "Scraping Successful"
 
 if __name__ == "__main__":
