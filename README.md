@@ -9,5 +9,4 @@ We used to deliver this challenge 10 we used to automate the website Splinter ,t
 ## Results
 * Added the hemisphere images.
 * Styled the "Scrape New Data" 
-* 
-.
+
