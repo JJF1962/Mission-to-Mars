@@ -1,5 +1,5 @@
 # importing Flask to work with Mongo lesson 10.5.1
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
 from flask_pymongo import PyMongo
 import Scraping
 
@@ -21,7 +21,7 @@ def scrape():
     #holds newly scraped data, referencing scrape_all() function in scraping.py file
     mars_data=Scraping.scrape_all()
     mars.update_one({}, {"$set": mars_data}, upsert=True)
-    return "Scraping Successful"
+    return redirect('/', code=302)
 
 if __name__ == "__main__":
     app.run(debug=True)
